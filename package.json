@@ -1,0 +1,25 @@
+{
+  "name": "project-in-the-tropics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "serve": "browser-sync start --server --open 'local' --files 'assets/styles/dist/*.css, assets/scripts/dist/*.js'",
+    "build:css": "postcss -u postcss-import -u postcss-cssnext -u cssnano -o assets/styles/dist/main.css assets/styles/src/main.css",
+    "watch:css": "postcss -u postcss-import -u postcss-cssnext -u cssnano -o assets/styles/dist/main.css assets/styles/src/main.css -w",
+    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css'",
+    "start": "npm run watch:all",
+    "postinstall": "npm run start"
+  },
+  "author": "James Lutley",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^5.2.8",
+    "postcss-cli": "^2.6.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
+  }
+}
