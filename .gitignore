@@ -39,3 +39,6 @@ jspm_packages
 
 # Optional eslint cache
 .eslintcache
+
+# Tern
+.tern-port
