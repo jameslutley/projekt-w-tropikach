@@ -1,0 +1,14 @@
+.c-social-share {
+  @apply --clearfix;
+  display: inline-block;
+}
+
+.c-social-share__item {
+  display: inline-block;
+  float: left;
+  margin-right: var(--global-spacing-unit-tiny);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

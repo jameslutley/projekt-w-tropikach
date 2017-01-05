@@ -1,0 +1,47 @@
+/**
+ * Add margins
+ */
+
+.u-margin-large {
+  margin: var(--global-spacing-unit-large);
+}
+
+.u-margin-top-large {
+  margin-top: var(--global-spacing-unit-large);
+}
+
+.u-margin-right-large {
+  margin-right: var(--global-spacing-unit-large);
+}
+
+.u-margin-bottom-large {
+  margin-bottom: var(--global-spacing-unit-large);
+}
+
+.u-margin-left-large {
+  margin-left: var(--global-spacing-unit-large);
+}
+
+/**
+ * Add small paddings
+ */
+
+.u-padding-small {
+  padding: var(--global-spacing-unit-small);
+}
+
+.u-padding-top-small {
+  padding-top: var(--global-spacing-unit-small);
+}
+
+.u-padding-right-small {
+  padding-right: var(--global-spacing-unit-smlal);
+}
+
+.u-padding-bottom-small {
+  padding-bottom: var(--global-spacing-unit-small);
+}
+
+.u-padding-left-small {
+  padding-left: var(--global-spacing-unit-small);
+}

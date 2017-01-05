@@ -1,0 +1,21 @@
+blockquote {
+  margin: 0;
+  margin-top: var(--global-spacing-unit-large);
+  padding-left: calc(var(--global-spacing-unit) * 1.5);
+  border-left: 4px solid var(--turquoise);
+
+  & > p {
+    margin-top: 0;
+    margin-bottom: var(--global-spacing-unit-small);
+    font-family: var(--global-font-headings);
+    font-size: calc(var(--global-base-font-size) * 2.4);
+    line-height: calc(60 / 48);
+    letter-spacing: 3px;
+  }
+
+  & cite {
+    font-style: normal;
+    font-weight: var(--global-font-weight-semi-bold);
+    color: var(--turquoise);
+  }
+}

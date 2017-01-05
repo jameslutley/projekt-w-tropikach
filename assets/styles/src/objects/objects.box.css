@@ -1,0 +1,9 @@
+.o-box {
+  @apply --clearfix;
+  display: block;
+  padding: var(--global-spacing-unit);
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

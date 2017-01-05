@@ -1,0 +1,14 @@
+body {
+  background-color: var(--white);
+  color: var(--grey);
+  font-family: var(--global-font-sans);
+  font-size: var(--global-base-font-size);
+  line-height: var(--global-line-height);
+  font-weight: var(--global-font-weight-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  & ::selection {
+    background: var(--blue-light-25);
+  }
+}

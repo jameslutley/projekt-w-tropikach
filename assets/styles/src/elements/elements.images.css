@@ -1,0 +1,10 @@
+img {
+  max-width: 100%;
+  font-style: italic;
+  vertical-align: bottom;
+}
+
+img[width],
+img[height] {
+  max-width: none;
+}

@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6,
+.u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6 {
+  font-family: var(--global-font-headings);
+	text-align: center;
+}
+
+h1,
+.u-h1 {
+  font-size: calc(var(--global-base-font-size) * 3.2);
+  line-height: calc(75 / 64);
+  font-weight: var(--global-font-weight-semi-bold);
+  letter-spacing: 4px;
+}
+
+h2,
+.u-h2 {
+  font-size: calc(var(--global-base-font-size) * 1.8);
+  line-height: calc(45 / 36);
+  font-weight: var(--global-font-weight-medium);
+  letter-spacing: 2.25px;
+  margin-top: 0;
+  margin-bottom: var(--global-spacing-unit);
+  padding-top: var(--global-spacing-unit-large);
+
+  &::after {
+    content: "";
+    display: block;
+    margin-top: calc(var(--global-spacing-unit-small) - 4px);
+    margin-left: auto;
+    margin-right: auto;
+    height: 4px;
+    width: 45px;
+    background-color: var(--grey-light);
+  }
+}
+
+h3,
+.u-h3 {
+  font-size: calc(var(--global-base-font-size) * 1.5);
+  line-height: calc(45 / 30);
+  font-weight: var(--global-font-weight-medium);
+  letter-spacing: 2.5px;
+}

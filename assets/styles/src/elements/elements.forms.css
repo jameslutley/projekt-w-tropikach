@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  line-height: calc(30 / 18);
+  font-weight: var(--global-font-weight-bold);
+  text-align: left;
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email] {
+  margin-bottom: var(--global-spacing-unit);
+  border: 0;
+  padding: var(--global-spacing-unit-small);
+  line-height: var(--global-line-height);
+  transition: var(--global-transition);
+
+  &:focus {
+    box-shadow: inset 0 0 0 4px var(--turquoise);
+    outline: none;
+  }
+}
+
+input[type=submit] {
+  transition: var(--global-transition);
+
+  &:hover {
+    cursor: pointer;
+  }
+}

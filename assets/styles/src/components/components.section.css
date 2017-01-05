@@ -1,0 +1,26 @@
+.c-section {
+  padding-bottom: var(--global-spacing-unit-huge);
+}
+
+.c-section--blue-dark {
+  background-color: var(--blue-dark);
+}
+
+.c-section--grey-dark {
+  background-color: var(--grey-dark);
+}
+
+.c-section--inverted {
+  color: var(--white);
+
+  & h2,
+  & .h2 {
+    &::after {
+      background-color: var(--grey-light-50);
+    }
+  }
+
+  & a {
+    color: var(--white);
+  }
+}

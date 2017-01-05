@@ -1,0 +1,16 @@
+dt {
+  margin-bottom: var(--global-spacing-unit-small);
+  padding-top: calc(var(--global-spacing-unit-small) - 2px);
+  font-family: var(--global-font-headings);
+  font-size: calc(var(--global-base-font-size) * 1.5);
+  line-height: calc(45 / 30);
+  font-weight: var(--global-font-weight-medium);
+  letter-spacing: 2.5px;
+  color: var(--blue);
+  border-top: 2px solid var(--grey-light);
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: calc(var(--global-spacing-unit) * 1.5);
+}

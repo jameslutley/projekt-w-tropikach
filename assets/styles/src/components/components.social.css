@@ -1,0 +1,14 @@
+.c-social {
+  margin-right: var(--global-spacing-unit-tiny);
+  opacity: 1;
+  transition: var(--global-transition);
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

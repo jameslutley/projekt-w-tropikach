@@ -1,0 +1,17 @@
+/**
+ * These inputs will fill the entirety of their container.
+ *
+ * 1. Remove padding so that widths and paddings don’t conflict.
+ */
+.c-input--full {
+  width: 100%;
+  padding-right: 0;
+  /* [1] */
+  padding-left: 0;
+  /* [1] */
+  text-align: left;
+}
+
+.c-label__asterisk {
+  color: var(--red);
+}

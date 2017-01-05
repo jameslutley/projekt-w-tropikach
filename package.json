@@ -4,22 +4,58 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "modernizr": "modernizr -c modernizr-config.json",
+    "babel": "babel assets/scripts/src --out-dir assets/scripts/dist --source-maps --presets=babili --no-babelrc",
+    "eslint": "eslint assets/scripts/src",
     "serve": "browser-sync start --server --open 'local' --files 'assets/styles/dist/*.css, assets/scripts/dist/*.js'",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u cssnano -o assets/styles/dist/main.css assets/styles/src/main.css",
+    "build:js": "npm run babel",
+    "build:all": "npm run build:css && npm run build:js",
     "watch:css": "postcss -u postcss-import -u postcss-cssnext -u cssnano -o assets/styles/dist/main.css assets/styles/src/main.css -w",
-    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css'",
+    "watch:js": "onchange 'assets/scripts/src/*.js' -- npm run build:js",
+    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
     "start": "npm run watch:all",
     "postinstall": "npm run start"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "globals": {
+      "window": true,
+      "document": true
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "syntax-object-rest-spread"
+    ]
   },
   "author": "James Lutley",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babili": "0.0.9",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "onchange": "^3.2.1",
     "postcss": "^5.2.8",
     "postcss-cli": "^2.6.0",
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.0.0"
   },
   "dependencies": {
-    "normalize.css": "^5.0.0"
+    "imagesloaded": "^4.1.1",
+    "lazysizes": "^3.0.0-rc2",
+    "masonry-layout": "^4.1.1",
+    "modernizr": "^3.3.1",
+    "normalize.css": "^5.0.0",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
   }
 }
