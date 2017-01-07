@@ -13,8 +13,16 @@
  */
 
 html {
-  font-size: var(--global-font-size); /* [1] */
+  font-size: var(--global-font-size-tiny); /* [1] */
   line-height: var(--global-line-height);
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
+
+  @media (min-width: 480px) {
+    font-size: var(--global-font-size-small);
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--global-font-size);
+  }
 }

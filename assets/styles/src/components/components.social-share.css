@@ -11,4 +11,10 @@
   &:last-child {
     margin-right: 0;
   }
+
+  /* Hack to get social sharing buttons to align */
+  & > iframe,
+  & > span {
+    vertical-align: top !important;
+  }
 }

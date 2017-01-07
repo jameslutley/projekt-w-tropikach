@@ -1,8 +1,16 @@
 blockquote {
   margin: 0;
   margin-top: var(--global-spacing-unit-large);
-  padding-left: calc(var(--global-spacing-unit) * 1.5);
+  padding-left: calc(var(--global-spacing-unit) * 0.666666);
   border-left: 4px solid var(--turquoise);
+
+  @media (min-width: 480px) {
+    padding-left: var(--global-spacing-unit);
+  }
+
+  @media (min-width: 768px) {
+    padding-left: calc(var(--global-spacing-unit) * 1.5);
+  }
 
   & > p {
     margin-top: 0;

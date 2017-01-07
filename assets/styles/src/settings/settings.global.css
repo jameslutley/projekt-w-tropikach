@@ -8,6 +8,8 @@
 
 /* Standardise some UI treatments. */
 :root {
+  --global-font-size-tiny: 16px;
+  --global-font-size-small: 18px;
   --global-font-size: 20px;
   --global-base-font-size: 1rem;
   --global-line-height: 1.5;
@@ -25,6 +27,8 @@
   --global-spacing-unit-huge: 4.5rem;
 
   --global-easing-timing: 0.18s;
+  --global-easing-timing-large: 0.36s;
+  --global-easing-timing-huge: 0.54s;
   --global-easing-curve: cubic-bezier(.5,.15,.65,.95);
   --global-transition: all var(--global-easing-timing) var(--global-easing-curve);
 }
