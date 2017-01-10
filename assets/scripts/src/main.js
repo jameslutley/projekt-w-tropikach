@@ -3,6 +3,7 @@
 import navigation from './modules/navigation';
 import imageGridEffects from './modules/image-grid-effects';
 import facebookLikeButton from './modules/facebook-like-button';
+import mailchimpNewsletterSignup from './modules/mailchimp-newsletter-signup';
 
 require('script-loader!../../../node_modules/lazysizes/lazysizes.js');
 require('script-loader!../../../node_modules/smooth-scroll/dist/js/smooth-scroll.js');
@@ -23,6 +24,10 @@ fbRoot.id = 'fb-root';
 document.body.appendChild(fbRoot);
 
 facebookLikeButton(document, 'script', 'facebook-jssdk');
+
+// Mailchimp Newsletter Signup
+const newsletter = document.querySelector('#mc_embed_signup');
+newsletter.addEventListener('submit', mailchimpNewsletterSignup);
 
 // Image Gallery
 imageGridEffects();

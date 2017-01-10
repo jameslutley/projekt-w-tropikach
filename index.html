@@ -348,47 +348,6 @@
                         </div>
                     </form>
                 </div>
-                <!-- <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script> -->
-                <!-- <script type='text/javascript'>(function ( $ ) { -->
-                <!--     window.fnames = new Array(); -->
-                <!--     window.ftypes = new Array(); -->
-                <!--     fnames[0] = 'EMAIL'; -->
-                <!--     ftypes[0] = 'email'; -->
-                <!--     fnames[1] = 'NAME'; -->
-                <!--     ftypes[1] = 'text'; -->
-                <!-- }( jQuery )); -->
-                <!-- var $mcj = jQuery.noConflict( true );</script> -->
-
-                <!-- Why does MailChimp load jQuery just for simple form validation?! Let's do this with pure JavaScript :) -->
-                <script>
-                    function newsletterSubmitted(event) {
-                        event.preventDefault();
-
-                        this._form   = this.querySelector("form");
-                        this._action = this._form.getAttribute("action");
-                        this._email  = this._form.querySelector("input.email").value;
-                        this._name   = this._form.querySelector("input.name").value;
-
-                        document.MC_callback = function(response) {
-                            if (response.result == "success") {
-                          // show success message
-                            } else {
-                          // show error message
-                            }
-                        }
-
-                        // generate script
-                        this._script      = document.createElement("script");
-                        this._script.type = "text/javascript";
-                        this._script.src  = this._action + "&c=document.MC_callback&EMAIL=" + this._email + (this._name ? "&NAME=" + this._name : "");
-
-                        // append script to head
-                        document.getElementsByTagName("head")[0].appendChild(this._script);
-                    }
-
-                    var newsletter = document.querySelector("#mc_embed_signup");
-                    newsletter.addEventListener("submit", newsletterSubmitted);
-                </script>
                 <!--End mc_embed_signup-->
             </div>
         </section>
