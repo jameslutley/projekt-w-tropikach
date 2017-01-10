@@ -1,11 +1,12 @@
 /* globals smoothScroll */
 
+import navigation from './modules/navigation';
+import imageGridEffects from './modules/image-grid-effects';
+import facebookLikeButton from './modules/facebook-like-button';
+
 require('script-loader!../../../node_modules/lazysizes/lazysizes.js');
 require('script-loader!../../../node_modules/smooth-scroll/dist/js/smooth-scroll.js');
 require('script-loader!../../../node_modules/imagesloaded/imagesloaded.pkgd.js');
-
-import navigation from './modules/navigation';
-import imageGridEffects from './modules/image-grid-effects';
 
 // Smooth Scroll
 smoothScroll.init({
@@ -16,6 +17,13 @@ smoothScroll.init({
 // Responsive Navigation
 navigation();
 
+// Facebook Like Button
+const fbRoot = document.createElement('div');
+fbRoot.id = 'fb-root';
+document.body.appendChild(fbRoot);
+
+facebookLikeButton(document, 'script', 'facebook-jssdk');
+
 // Image Gallery
 imageGridEffects();
 
@@ -23,7 +31,7 @@ const support = {
   transitions: window.Modernizr.csstransition,
 };
 
-// transition end event name
+// Transition end event name
 const transEndEventNames = {
   WebkitTransition: 'webkitTransitionEnd',
   MozTransition: 'transitionend',

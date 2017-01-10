@@ -24,17 +24,14 @@ module.exports = {
       },
       {
         test: /[\/\\]node_modules[\/\\]lazysizes[\/\\]lazysizes\.js$/,
-        // loader: 'imports?this=>window',
         loader: 'imports?define=>false',
       },
       {
         test: /[\/\\]node_modules[\/\\]smooth-scroll[\/\\]dist[\/\\]js[\/\\]smooth-scroll\.js$/,
-        // loader: 'imports?this=>window',
         loader: 'imports?define=>false',
       },
       {
         test: /[\/\\]node_modules[\/\\]imagesloaded[\/\\]imagesloaded\.pkgd\.min\.js$/,
-        // loader: 'imports?this=>window',
         loader: 'imports?define=>false',
       },
       {
@@ -45,20 +42,20 @@ module.exports = {
     ],
   },
   plugins: [
-    // uglify js
+    // Uglify js
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
       sourceMap: true,
     }),
 
-    // provide plugin - inject implicit globals
+    // Provide plugin - inject implicit globals
     new webpack.ProvidePlugin({
       Modernizr: 'Modernizr',
       imagesloaded: 'imagesloaded',
     }),
 
-    // env plugin
+    // Env plugin
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
     }),
