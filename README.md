@@ -1,6 +1,6 @@
 # Projekt W Tropikach
 
-[Staging site](http://projekt-w-tropikach.s3-website.eu-west-2.amazonaws.com)/
+[Staging site](http://projekt-w-tropikach.s3-website.eu-west-2.amazonaws.com)
 
 My first side project of 2017 is a one-page teaser site I designed and built for my buddy [Stefan’s](https://github.com/stewro) Project In The Tropics (Projekt W Tropikach). He’s putting together a crack team of Polish Java devs, PMs, and QAs to work on some exciting new products whilst travelling around Southeast Asia. They’ll be dropping into amazing digital nomad destinations like Chiang Mai, Bali, and Da Nang in Vietnam.
 
