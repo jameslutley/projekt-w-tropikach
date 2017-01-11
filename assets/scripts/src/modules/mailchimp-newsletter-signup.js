@@ -1,7 +1,11 @@
-export default function mailchimpNewsletterSignup(event) {
-  // Mailchimp’s embed script loads the full jQuery library just for basic form validation!
-  // Let’s do this in pure JavaScript :)
+/* ==========================================================================
+   #MAILCHIMP NEWSLETTER SIGNUP
+   ========================================================================== */
 
+// Mailchimp’s subscription form script loads the full jQuery library just for basic validation of two form fields!
+// Let’s do this in pure JavaScript :)
+
+export default function mailchimpNewsletterSignup(event) {
   event.preventDefault();
 
   this.form = this.querySelector('form');

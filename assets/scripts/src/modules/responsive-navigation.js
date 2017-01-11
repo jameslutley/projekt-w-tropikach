@@ -1,5 +1,9 @@
 /* globals window Modernizr */
 
+/* ==========================================================================
+   #RESPONSIVE NAVIGATION
+   ========================================================================== */
+
 export default function toggleOverlay() {
   const overlay = document.querySelector('.c-navigation__overlay');
   const transEndEventNames = {

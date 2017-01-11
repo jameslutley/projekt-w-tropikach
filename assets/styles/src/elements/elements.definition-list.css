@@ -1,3 +1,7 @@
+/* ==========================================================================
+   #DEFINITION LIST
+   ========================================================================== */
+
 dt {
   margin-bottom: var(--global-spacing-unit-small);
   padding-top: calc(var(--global-spacing-unit-small) - 2px);

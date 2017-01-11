@@ -1,5 +1,9 @@
 /* globals window Modernizr imagesloaded */
 
+/* ==========================================================================
+   #IMAGE GRID EFFECTS
+   ========================================================================== */
+
 /**
  * main.js
  * http://www.codrops.com
@@ -16,7 +20,7 @@ export default function imageGridEffects() {
     transitions: window.Modernizr.csstransitions,
   };
 
-  // transition end event name
+  // Transition end event name
   const transEndEventNames = {
     WebkitTransition: 'webkitTransitionEnd',
     MozTransition: 'transitionend',
@@ -45,7 +49,7 @@ export default function imageGridEffects() {
   };
 
   /**
-   * some helper functions
+   * Some helper functions
    */
 
   function throttle(fn, delay) {
@@ -103,26 +107,26 @@ export default function imageGridEffects() {
       this.options.onInit(this);
 
       const self = this;
-      // init masonry after all images are loaded
+      // Init masonry after all images are loaded
       window.imagesLoaded(this.gridEl, () => {
-        // initialize masonry
+        // Initialize masonry
         // new Masonry(self.gridEl, {
         //     itemSelector: '.grid__item',
         //     isFitWidth: true
         // });
-        // show grid after all images (thumbs) are loaded
+        // Show grid after all images (thumbs) are loaded
         self.gridEl.classList.add('grid--loaded');
-        // init/bind events
+        // Init/bind events
         self._initEvents();
-        // create the large image and append it to the DOM
+        // Create the large image and append it to the DOM
         self._setOriginal();
-        // create the clone image and append it to the DOM
+        // Create the clone image and append it to the DOM
         self._setClone();
       });
     }
 
     /**
-     * initialize/bind events
+     * Initialize/bind events
      */
     _initEvents() {
       const self = this;
@@ -154,40 +158,40 @@ export default function imageGridEffects() {
         });
       });
 
-      // close expanded image
+      // Close expanded image
       this.closeCtrl.addEventListener('click', () => {
         self._closeItem();
       });
 
       window.addEventListener('resize', throttle(ev => {
-        // callback
+        // Callback
         self.options.onResize(self);
       }, 10));
     }
 
     /**
-     * open a grid item
+     * Open a grid item
      */
     _openItem(ev, item) {
       if (this.isAnimating || this.isExpanded) return;
       this.isAnimating = true;
       this.isExpanded = true;
 
-      // item's image
+      // Item's image
       const gridImg = item.querySelector('img');
 
       const gridImgOffset = gridImg.getBoundingClientRect();
 
-      // index of current item
+      // Index of current item
       this.current = this.items.indexOf(item);
 
-      // set the src of the original image element (large image)
+      // Set the src of the original image element (large image)
       this._setOriginal(item.querySelector('a').getAttribute('href'));
 
-      // callback
+      // Callback
       this.options.onOpenItem(this, item);
 
-      // set the clone image
+      // Set the clone image
       this._setClone(gridImg.src, {
         width: gridImg.offsetWidth,
         height: gridImg.offsetHeight,
@@ -195,10 +199,10 @@ export default function imageGridEffects() {
         top: gridImgOffset.top,
       });
 
-      // hide original grid item
+      // Hide original grid item
       item.classList.add('grid__item--current');
 
-      // calculate the transform value for the clone to animate to the full image view
+      // Calculate the transform value for the clone to animate to the full image view
       const win = this._getWinSize();
 
       const originalSizeArr = item.getAttribute('data-size').split('x');
@@ -212,11 +216,11 @@ export default function imageGridEffects() {
       const dy = ((this.options.imgPosition.y > 0 ? 1 - Math.abs(this.options.imgPosition.y) : Math.abs(this.options.imgPosition.y)) * win.height + this.options.imgPosition.y * win.height / 2) - gridImgOffset.top - 0.5 * gridImg.offsetHeight;
       const z = Math.min(Math.min(win.width * Math.abs(this.options.imgPosition.x) - this.options.pagemargin, originalSize.width - this.options.pagemargin) / gridImg.offsetWidth, Math.min(win.height * Math.abs(this.options.imgPosition.y) - this.options.pagemargin, originalSize.height - this.options.pagemargin) / gridImg.offsetHeight);
 
-      // apply transform to the clone
+      // Apply transform to the clone
       this.cloneImg.style.WebkitTransform = `translate3d(${dx}px, ${dy}px, 0) scale3d(${z}, ${z}, 1)`;
       this.cloneImg.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale3d(${z}, ${z}, 1)`;
 
-      // add the description if any
+      // Add the description if any
       const descriptionEl = item.querySelector('.description');
       if (descriptionEl) {
         this.previewDescriptionEl.innerHTML = descriptionEl.innerHTML;
@@ -224,23 +228,23 @@ export default function imageGridEffects() {
 
       const self = this;
       setTimeout(() => {
-        // controls the elements inside the expanded view
+        // Controls the elements inside the expanded view
         self.previewEl.classList.add('preview--open');
-        // callback
+        // Callback
         self.options.onExpand();
       }, 0);
 
-      // after the clone animates..
+      // After the clone animates..
       onEndTransition(this.cloneImg, () => {
-        // when the original/large image is loaded..
+        // When the original/large image is loaded..
         window.imagesLoaded(self.originalImg, () => {
-          // close button just gets shown after the large image gets loaded
+          // Close button just gets shown after the large image gets loaded
           self.previewEl.classList.add('preview--image-loaded');
-          // animate the opacity to 1
+          // Animate the opacity to 1
           self.originalImg.style.opacity = 1;
-          // and once that's done..
+          // And once that's done..
           onEndTransition(self.originalImg, () => {
-            // reset cloneImg
+            // Reset cloneImg
             self.cloneImg.style.opacity = 0;
             self.cloneImg.style.WebkitTransform = 'translate3d(0,0,0) scale3d(1,1,1)';
             self.cloneImg.style.transform = 'translate3d(0,0,0) scale3d(1,1,1)';
@@ -252,7 +256,7 @@ export default function imageGridEffects() {
     }
 
     /**
-     * create/set the original/large image element
+     * Create/set the original/large image element
      */
     _setOriginal(src) {
       if (!src) {
@@ -261,7 +265,7 @@ export default function imageGridEffects() {
         this.originalImg.style.opacity = 0;
         this.originalImg.style.maxWidth = `calc(${parseInt(Math.abs(this.options.imgPosition.x) * 100, 10)}vw - ${this.options.pagemargin}px)`;
         this.originalImg.style.maxHeight = `calc(${parseInt(Math.abs(this.options.imgPosition.y) * 100, 10)}vh - ${this.options.pagemargin}px)`;
-        // need it because of firefox
+        // Need it because of firefox
         this.originalImg.style.WebkitTransform = 'translate3d(0,0,0) scale3d(1,1,1)';
         this.originalImg.style.transform = 'translate3d(0,0,0) scale3d(1,1,1)';
         src = '';
@@ -272,7 +276,7 @@ export default function imageGridEffects() {
     }
 
     /**
-     * create/set the clone image element
+     * Create/set the clone image element
      */
     _setClone(src, settings) {
       if (!src) {
@@ -283,7 +287,7 @@ export default function imageGridEffects() {
         this.previewEl.appendChild(this.cloneImg);
       } else {
         this.cloneImg.style.opacity = 1;
-        // set top/left/width/height of grid item's image to the clone
+        // Set top/left/width/height of grid item's image to the clone
         this.cloneImg.style.width = `${settings.width}px`;
         this.cloneImg.style.height = `${settings.height}px`;
         this.cloneImg.style.top = `${settings.top}px`;
@@ -294,14 +298,14 @@ export default function imageGridEffects() {
     }
 
     /**
-     * closes the original/large image view
+     * Closes the original/large image view
      */
     _closeItem() {
       if (!this.isExpanded || this.isAnimating) return;
       this.isExpanded = false;
       this.isAnimating = true;
 
-      // the grid item's image and its offset
+      // The grid item's image and its offset
       const gridItem = this.items[this.current];
 
       const gridImg = gridItem.querySelector('img');
@@ -311,13 +315,13 @@ export default function imageGridEffects() {
       this.previewEl.classList.remove('preview--open');
       this.previewEl.classList.remove('preview--image-loaded');
 
-      // callback
+      // Callback
       this.options.onCloseItem(this, gridItem);
 
-      // large image will animate back to the position of its grid's item
+      // Large image will animate back to the position of its grid's item
       this.originalImg.classList.add('animate');
 
-      // set the transform to the original/large image
+      // Set the transform to the original/large image
       const win = this._getWinSize();
 
       const dx = gridImgOffset.left + gridImg.offsetWidth / 2 - ((this.options.imgPosition.x > 0 ? 1 - Math.abs(this.options.imgPosition.x) : Math.abs(this.options.imgPosition.x)) * win.width + this.options.imgPosition.x * win.width / 2);
@@ -327,22 +331,22 @@ export default function imageGridEffects() {
       this.originalImg.style.WebkitTransform = `translate3d(${dx}px, ${dy}px, 0) scale3d(${z}, ${z}, 1)`;
       this.originalImg.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale3d(${z}, ${z}, 1)`;
 
-      // once that's done..
+      // Once that's done..
       onEndTransition(this.originalImg, () => {
-        // clear description
+        // Clear description
         self.previewDescriptionEl.innerHTML = '';
 
-        // show original grid item
+        // Show original grid item
         gridItem.classList.remove('grid__item--current');
 
-        // fade out the original image
+        // Fade out the original image
         setTimeout(() => {
           self.originalImg.style.opacity = 0;
         }, 60);
 
-        // and after that
+        // And after that
         onEndTransition(self.originalImg, () => {
-          // reset original/large image
+          // Reset original/large image
           self.originalImg.classList.remove('animate');
           self.originalImg.style.WebkitTransform = 'translate3d(0,0,0) scale3d(1,1,1)';
           self.originalImg.style.transform = 'translate3d(0,0,0) scale3d(1,1,1)';
@@ -353,7 +357,7 @@ export default function imageGridEffects() {
     }
 
     /**
-     * gets the window sizes
+     * Gets the window sizes
      */
     _getWinSize() {
       return {
@@ -364,7 +368,7 @@ export default function imageGridEffects() {
   }
 
   /**
-   * options
+   * Options
    */
   GridFx.prototype.options = {
     pagemargin: 0,

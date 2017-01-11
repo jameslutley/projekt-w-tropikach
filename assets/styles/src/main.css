@@ -1,16 +1,74 @@
-/* Settings */
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+
+/**
+ * Styles by @jameslutley | jameslutley.com
+ *
+ * github.com/jameslutley/ProjectInTheTropics
+ */
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Project-wide variables and settings.
+ * Colors...............Project-wide colors.
+ *
+ * TOOLS
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ * Typography...........Basic typographic styles
+ * Images...............Base image styles.
+ * Links................Basic link styles.
+ * Blockquote...........Stylistic blockquote and citation.
+ *
+ * OBJECTS
+ * Box..................Simple boxing abstraction.
+ * Wrapper..............Page constraint object.
+ *
+ * COMPONENTS
+ * Banner...............Site header / banner styles.
+ * Greybox..............Simple greybox component for wireframing.
+ * Navigation...........Responsive main navigation styles.
+ * Image Grid Effects...Image gallery styles with CSS3 transitions.
+ * Section..............Component for self-contained page sections.
+ * Social Links.........Component for social media icon links.
+ * Social Sharing.......Styles for social media sharing buttons.
+ * Buttons..............The button component.
+ * Inputs...............Component for styling form inputs.
+ * Lazyload.............Component for fading in lazy loaded images.
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Hide.................Helper classes to hide content
+ * Spacings.............Nudge bits of the DOM around with these spacing
+ *                      classes.
+ * Typography...........Helper classes for aligning text.
+ */
+
+/* SETTINGS */
 @import "settings/settings.colors.css";
 @import "settings/settings.global.css";
 
-/* Tools */
+/* TOOLS */
 @import "tools/tools.clearfix.css";
 @import "tools/tools.hidden.css";
 
-/* Generic */
+/* GENERIC */
 @import "../../../node_modules/normalize.css/normalize.css";
 @import "generic/generic.box-sizing.css";
 
-/* Elements */
+/* ELEMENTS */
 @import "elements/elements.page.css";
 @import "elements/elements.headings.css";
 @import "elements/elements.typography.css";
@@ -20,23 +78,23 @@
 @import "elements/elements.definition-list.css";
 @import "elements/elements.forms.css";
 
-/* Objects */
+/* OBJECTS */
 @import "objects/objects.box.css";
 @import "objects/objects.wrapper.css";
 
-/* Components */
+/* COMPONENTS */
 @import "components/components.banner.css";
 @import "components/components.greybox.css";
 @import "components/components.navigation.css";
 @import "components/components.image-grid-effects.css";
 @import "components/components.section.css";
-@import "components/components.social.css";
+@import "components/components.social-links.css";
 @import "components/components.social-share.css";
 @import "components/components.buttons.css";
 @import "components/components.inputs.css";
 @import "components/components.lazyload.css";
 
-/* Utilities */
+/* UTILITIES */
 @import "utilities/utilities.clearfix.css";
 @import "utilities/utilities.hide.css";
 @import "utilities/utilities.spacings.css";

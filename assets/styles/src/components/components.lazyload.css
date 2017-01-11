@@ -1,8 +1,13 @@
-/* fade image in after load */
+/* ==========================================================================
+   #LAZYLOAD
+   ========================================================================== */
+
+/* Fade image in after load */
 .lazyload,
 .lazyloading {
   opacity: 0;
 }
+
 .lazyloaded {
   opacity: 1;
   transition: opacity var(--global-easing-timing-large) var(--global-easing-curve);
