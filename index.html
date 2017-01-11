@@ -27,9 +27,20 @@
                         <defs><path id="a" d="M2 0h22l2 7H0z"/><path id="c" d="M0 0h22v14H0z"/></defs><g fill="none" fill-rule="evenodd"><path d="M21 42C9.42 42 0 32.58 0 21S9.42 0 21 0s21 9.42 21 21h-2c0-10.477-8.523-19-19-19S2 10.523 2 21s8.523 19 19 19v2" fill="#FFF"/><path fill="#FFF" d="M19.966 0h2v40.235h-2"/><path fill="#FFF" d="M1.765 19.037h39.648v2H1.765"/><path d="M21 42c-7.038 0-12.765-9.157-12.765-20.412 0-11.255 5.727-20.41 12.765-20.41s12.765 9.155 12.765 20.41c0 .553-.448 1-1 1-.553 0-1-.447-1-1 0-10.153-4.83-18.41-10.765-18.41-5.935 0-10.765 8.257-10.765 18.41C10.235 31.74 15.065 40 21 40c.553 0 1 .447 1 1 0 .553-.447 1-1 1" fill="#FFF"/><g transform="translate(24 38)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M26.02 9H0c-.628 0-1.22-.295-1.597-.796-.378-.5-.5-1.15-.326-1.754l2-7C.322-1.408 1.107-2 2-2h22c.893 0 1.678.592 1.923 1.45l1.925 6.736c.11.25.17.524.17.814 0 1.104-.893 2-2 2zM2.65 5h20.7l-.86-3H3.51l-.86 3z" fill="#FFF" mask="url(#b)"/></g><g transform="translate(26 26)"><mask id="d" fill="#fff"><use xlink:href="#c"/></mask><path d="M22 16H0c-1.104 0-2-.896-2-2V0c0-1.104.896-2 2-2h22c1.104 0 2 .896 2 2v14c0 1.104-.896 2-2 2zM2 12h18V2H2v10z" fill="#FFF" mask="url(#d)"/></g></g>
                     </svg>
                 </a>
-                <button type="button" class="c-navigation__overlay-trigger">Open</button>
+                <button type="button" class="c-navigation__overlay-trigger">
+                    <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="c-navigation__overlay-title">
+                        <title id="c-navigation__overlay-title">Menu</title>
+                        <g stroke-width="2" stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="square"><path d="M1 1h22M9 8h14M3 15h20"/></g>
+                    </svg>
+                </button>
                 <div class="c-navigation__overlay">
-                    <div class="c-navigation__overlay-inner">
+                    <button type="button" class="c-navigation__overlay-close">
+                        <span>&times;</span>
+                        <span class="u-hidden-visually">Close</span>
+                    </button>
+
+
+                    <div class="c-navigation__overlay-wrapper">
                         <ul class="c-navigation__items">
                             <li class="c-navigation__item">
                                 <a data-scroll class="c-navigation__link" href="#vision">Wizja</a>
@@ -46,7 +57,7 @@
                             <li class="c-navigation__item">
                                 <a data-scroll class="c-navigation__link" href="#join">Dołącz do nas</a>
                             </li>
-                            <li class="c-navigation__item">
+                            <li class="c-navigation__item c-navigation__item--social">
                                 <a class="c-navigation__link c-social" rel="me" href="https://twitter.com/tropik_projekt">
                                     <svg class="c-social--twitter__logo" width="25" height="20" viewBox="0 0 25 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="c-social--twitter__title">
                                         <title id="c-social--twitter__title">Twitter</title>
@@ -61,7 +72,6 @@
                                 </a>
                             </li>
                         </ul>
-                        <button type="button" class="c-navigation__overlay-close">Close</button>
                     </div>
                 </div>
             </div>
@@ -160,7 +170,7 @@
                     </div>
                 </div>
                 <div class="preview">
-                    <button class="action action--close">
+                    <button type="button" class="action action--close">
                         <span>&times;</span>
                         <span class="u-hidden-visually">Close</span>
                     </button>

@@ -1,12 +1,18 @@
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+
 .o-wrapper {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  padding-left: calc(var(--global-spacing-unit) * 0.666666);
-  padding-right: calc(var(--global-spacing-unit) * 0.666666);
+  /* padding-left: calc(var(--global-spacing-unit) * 0.666666); */
+  /* padding-right: calc(var(--global-spacing-unit) * 0.666666); */
+  padding-left: 4%;
+  padding-right: 4%;
   max-width: 850px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     padding-left: var(--global-spacing-unit-small);
     padding-right: var(--global-spacing-unit-small);
   }

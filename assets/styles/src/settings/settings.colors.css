@@ -9,6 +9,7 @@
   --blue: #0488e6;
   --blue-light: #08d8fd;
   --blue-light-25: color(#08d8fd alpha(25%));
+  --blue-light-96: color(#08d8fd alpha(96%));
   --blue-dark: #126199;
   --turquoise: #08f3d7;
   --red: #ea1f1b;

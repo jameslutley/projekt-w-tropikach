@@ -1,22 +1,36 @@
 /* globals smoothScroll */
 
-import navigation from './modules/navigation';
+import toggleOverlay from './modules/responsive-navigation';
 import imageGridEffects from './modules/image-grid-effects';
 import facebookLikeButton from './modules/facebook-like-button';
 import mailchimpNewsletterSignup from './modules/mailchimp-newsletter-signup';
 
+// Require legacy scripts and AMD modules
 require('script-loader!../../../node_modules/lazysizes/lazysizes.js');
 require('script-loader!../../../node_modules/smooth-scroll/dist/js/smooth-scroll.js');
 require('script-loader!../../../node_modules/imagesloaded/imagesloaded.pkgd.js');
 
 // Smooth Scroll
+const overlay = document.querySelector('.c-navigation__overlay');
+
 smoothScroll.init({
   speed: 800,
   easing: 'easeInOutQuart',
+  callback: () => {
+    overlay.classList.remove('open');
+  },
 });
 
 // Responsive Navigation
-navigation();
+// responsiveNavigation();
+const overlayMediaQuery = window.matchMedia('@media all and (max-width: 767px)');
+const triggerBttn = document.querySelector('.c-navigation__overlay-trigger');
+const closeBttn = overlay.querySelector('button.c-navigation__overlay-close');
+
+if (!overlayMediaQuery.matches) {
+  triggerBttn.addEventListener('click', toggleOverlay);
+  closeBttn.addEventListener('click', toggleOverlay);
+}
 
 // Facebook Like Button
 const fbRoot = document.createElement('div');

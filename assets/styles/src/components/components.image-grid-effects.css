@@ -23,7 +23,7 @@
   pointer-events: none;
   background: url(../../img/loading.svg) no-repeat 50% 75px;
   background-size: 60px auto;
-  transition: opacity var(--global-transition-timing-large) var(--global-transition-curve);
+  transition: opacity var(--global-easing-timing-large) var(--global-easing-curve);
 }
 
 .js .grid--loaded::after {
@@ -157,21 +157,21 @@
 
 /* Close button */
 .action {
-  font-size: 3rem;
+  font-size: calc(var(--global-base-font-size) * 3);
   margin: 0;
   padding: 0;
-  cursor: pointer;
   vertical-align: top;
   color: var(--blue-light);
   border: none;
   background: none;
   transition: var(--global-transition);
-}
 
-.action:hover,
-.action:focus {
+  &:hover,
+  &:focus {
     color: color(var(--blue-light) shade(30%));
     outline: none;
+    cursor: pointer;
+  }
 }
 
 .action--close {
