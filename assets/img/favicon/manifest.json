@@ -1,5 +1,5 @@
 {
-	"name": "Projekt w tropikach",
+	"name": "Projekt W Tropikach",
 	"icons": [
 		{
 			"src": "\/assets\/img\/favicon\/android-chrome-192x192.png",
@@ -12,6 +12,6 @@
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#ffffff",
+	"theme_color": "#0085e9",
 	"display": "standalone"
 }
