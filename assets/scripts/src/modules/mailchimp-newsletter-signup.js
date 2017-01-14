@@ -2,7 +2,8 @@
    #MAILCHIMP NEWSLETTER SIGNUP
    ========================================================================== */
 
-// Mailchimp’s subscription form script loads the full jQuery library just for basic validation of two form fields!
+// Mailchimp’s subscription form script loads the full jQuery
+// library just for basic validation of two form fields!
 // Let’s do this in pure JavaScript :)
 
 export default function mailchimpNewsletterSignup(event) {
